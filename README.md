@@ -6,14 +6,14 @@
 ## Installation
 
 ```bash
-npm i vue-image-compare --save
+npm i vue-image-compare-plus --save
 ```
 
 ## Usage
 
 ```javascript
 import Vue from 'vue';
-import VueImageCompare from 'vue-image-compare';
+import VueImageCompare from 'vue-image-compare-plus';
 
 Vue.use(VueImageCompare);
 
@@ -50,6 +50,7 @@ just before closing body tag.
 | `full` | `Boolean` | Determines if images are stretched to fill parent element. Can be used with help of CSS `object-fit: cover` to create full page image comparison | No | `false` |
 | `padding` | `Object` | Set left and right "padding" in pixels, so handle can **not** reach edge of an image | No | `{ left: 0, right: 0 }` |
 | `hideAfter` | `Boolean` | Hide image after and handle | No | `false` |
+| `handleStartPosition` | `String` | Determine handle start position | No | `center` |
 
 ## Slots
 
