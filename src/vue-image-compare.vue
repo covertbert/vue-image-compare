@@ -26,6 +26,10 @@ export default {
       type: String,
       required: true
     },
+    handleStartPosition: {
+      type: String,
+      default: 'center'
+    },
     full: {
       type: Boolean,
       default: false
@@ -106,7 +110,11 @@ export default {
         return;
       }
 
-      this.posX = (this.width + this.padding.left - this.padding.right) / 2;
+      if (this.handleStartPosition === 'left') {
+        this.posX = 0;
+      } else {
+        this.posX = (this.width + this.padding.left - this.padding.right) / 2;
+      }
     }
   },
   created() {
