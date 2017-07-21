@@ -1,9 +1,9 @@
 {
-  "name": "vue-image-compare",
-  "version": "0.6.1",
-  "description": "Compare two images via slider using vue.js",
-  "homepage": "https://github.com/marcincichocki/vue-image-compare",
-  "bugs": "https://github.com/marcincichocki/vue-image-compare/issues",
+  "name": "vue-image-compare-plus",
+  "version": "0.0.1",
+  "description": "Compare two images via slider using vue.js - Now with ability to choose slider start position",
+  "homepage": "https://github.com/covertbert/vue-image-compare",
+  "bugs": "https://github.com/covertbert/vue-image-compare/issues",
   "main": "dist/vue-image-compare.js",
   "scripts": {
     "build": "npm run build:dev && npm run build:prod",
@@ -16,7 +16,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/marcincichocki/vue-image-compare.git"
+    "url": "https://github.com/covertbert/vue-image-compare.git"
   },
   "keywords": [
     "vue",
