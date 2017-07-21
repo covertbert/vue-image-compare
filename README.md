@@ -1,5 +1,7 @@
 # Vue Image Compare
 
+This plugin was forked from https://www.npmjs.com/package/vue-image-compare
+
 ## Requirements
 * [Vue.js](http://vuejs.org/) (^2.0.0)
 
