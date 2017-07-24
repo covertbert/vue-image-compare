@@ -1,6 +1,6 @@
 {
   "name": "vue-image-compare-plus",
-  "version": "0.0.5",
+  "version": "0.0.6",
   "description": "Compare two images via slider using vue.js - Now with ability to choose slider start position",
   "homepage": "https://github.com/covertbert/vue-image-compare",
   "bugs": "https://github.com/covertbert/vue-image-compare/issues",

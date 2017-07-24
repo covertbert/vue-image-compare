@@ -86,7 +86,6 @@ export default {
       if (isDragging && this.allowNextFrame) {
         this.allowNextFrame = false;
         this.pageX = event.pageX || event.targetTouches[0].pageX || event.originalEvent.targetTouches[0].pageX;
-        console.log('wooooooo');
         window.requestAnimationFrame(this.updatePos);
       }
 		},
