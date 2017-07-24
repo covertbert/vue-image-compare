@@ -1,5 +1,5 @@
 <template>
-  <figure class="image-compare" :class="{ full }" @mousemove.prevent="onMouseMove" @touchstart="onMouseMove($event, true)" @touchmove="onMouseMove($event, true)" @click="onMouseMove($event, true)">
+  <figure class="image-compare" :class="{ full }" @mousemove.prevent="onMouseMove" @touchstart="onMouseMove($event, true)" @touchend="onDragEnd()" @touchmove="onMouseMove($event, true)" @click="onMouseMove($event, true)">
     <div class="image-compare-wrapper" :style="{ width: posX + 'px' }" v-show="!hideAfter">
       <img :src="after" :alt="after" :style="dimensions">
     </div>
@@ -80,17 +80,19 @@ export default {
     },
     onMouseUp(event) {
       event.preventDefault();
-
       this.isDragging = false;
     },
     onMouseMove(event, isDragging = this.isDragging) {
       if (isDragging && this.allowNextFrame) {
         this.allowNextFrame = false;
         this.pageX = event.pageX || event.targetTouches[0].pageX || event.originalEvent.targetTouches[0].pageX;
-
+        console.log('wooooooo');
         window.requestAnimationFrame(this.updatePos);
       }
 		},
+    onDragEnd() {
+      window.Event.$emit('sliderDragEnded');
+    },
     updatePos() {
       let posX = this.pageX - this.$el.getBoundingClientRect().left;
 
