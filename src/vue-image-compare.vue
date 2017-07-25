@@ -128,6 +128,9 @@ export default {
       () => this.padding.left + this.padding.right,
       (newValue) => this.setInitialPosX(newValue)
     );
+    window.Event.$on('resetSliderPosition', () => {
+      this.posX = 0;
+    })
   },
   beforeDestroy() {
     this.unwatch();

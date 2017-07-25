@@ -261,6 +261,9 @@ exports.default = {
     }, function (newValue) {
       return _this.setInitialPosX(newValue);
     });
+    window.Event.$on('resetSliderPosition', function () {
+      _this.posX = 0;
+    });
   },
   beforeDestroy: function beforeDestroy() {
     this.unwatch();
