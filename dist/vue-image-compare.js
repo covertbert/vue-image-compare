@@ -217,6 +217,7 @@ exports.default = {
     onMouseMove: function onMouseMove(event) {
       var isDragging = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.isDragging;
 
+      window.Event.$emit('sliderDragStart');
       if (isDragging && this.allowNextFrame) {
         this.allowNextFrame = false;
         this.overlayIsActive = true;

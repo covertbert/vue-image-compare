@@ -87,6 +87,7 @@
         this.isDragging = false;
       },
       onMouseMove(event, isDragging = this.isDragging) {
+        window.Event.$emit ('sliderDragStart');
         if (isDragging && this.allowNextFrame) {
           this.allowNextFrame = false;
           this.overlayIsActive = true;

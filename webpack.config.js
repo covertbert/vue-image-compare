@@ -29,7 +29,8 @@ module.exports = function makeWebpackConfig() {
   var config = {
     entry: './src/index.js',
     output: {
-      path: path.join(__dirname, 'dist'),
+      path: '/Users/bertie.blackman/Projects/Janssen/webapp/lundbeck_brintellix_ecnpBooth_vue/node_modules/vue-image-compare-plus/dist',
+      // path: path.join(__dirname, 'dist'),
       filename: outputFileName,
       library: 'VueImageCompare',
       libraryTarget: 'umd'
