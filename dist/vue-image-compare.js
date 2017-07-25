@@ -141,6 +141,9 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
 
 exports.default = {
   props: {
@@ -185,7 +188,8 @@ exports.default = {
       posX: null,
       isDragging: false,
       allowNextFrame: true,
-      unwatch: null
+      unwatch: null,
+      overlayIsActive: false
     };
   },
 
@@ -215,6 +219,7 @@ exports.default = {
 
       if (isDragging && this.allowNextFrame) {
         this.allowNextFrame = false;
+        this.overlayIsActive = true;
         this.pageX = event.pageX || event.targetTouches[0].pageX || event.originalEvent.targetTouches[0].pageX;
         window.requestAnimationFrame(this.updatePos);
       }
@@ -242,7 +247,7 @@ exports.default = {
       }
 
       if (this.handleStartPosition === 'left') {
-        this.posX = 0;
+        this.posX = 0 + this.padding.left;
       } else {
         this.posX = (this.width + this.padding.left - this.padding.right) / 2;
       }
@@ -262,7 +267,8 @@ exports.default = {
       return _this.setInitialPosX(newValue);
     });
     window.Event.$on('resetSliderPosition', function () {
-      _this.posX = 0;
+      _this.posX = 0 + _this.padding.left;
+      _this.overlayIsActive = false;
     });
   },
   beforeDestroy: function beforeDestroy() {
