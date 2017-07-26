@@ -84,11 +84,14 @@
       },
       onMouseUp(event) {
         event.preventDefault ();
+        if (this.isDragging) {
+          window.Event.$emit ('sliderDragEnded');
+				}
         this.isDragging = false;
       },
       onMouseMove(event, isDragging = this.isDragging) {
-        window.Event.$emit ('sliderDragStart');
         if (isDragging && this.allowNextFrame) {
+          window.Event.$emit ('sliderDragStart');
           this.allowNextFrame = false;
           this.overlayIsActive = true;
           this.pageX = event.pageX || event.targetTouches[0].pageX || event.originalEvent.targetTouches[0].pageX;
