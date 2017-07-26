@@ -212,13 +212,16 @@ exports.default = {
     },
     onMouseUp: function onMouseUp(event) {
       event.preventDefault();
+      if (this.isDragging) {
+        window.Event.$emit('sliderDragEnded');
+      }
       this.isDragging = false;
     },
     onMouseMove: function onMouseMove(event) {
       var isDragging = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : this.isDragging;
 
-      window.Event.$emit('sliderDragStart');
       if (isDragging && this.allowNextFrame) {
+        window.Event.$emit('sliderDragStart');
         this.allowNextFrame = false;
         this.overlayIsActive = true;
         this.pageX = event.pageX || event.targetTouches[0].pageX || event.originalEvent.targetTouches[0].pageX;
